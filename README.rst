@@ -45,8 +45,8 @@ At this moment, the software is at it's 95% mark. I need to find out how to make
 Thanks
 ------
 
-This thing only works because of the amazing help from [Belono](https://github.com/belono).
+This thing only works because of the amazing help from `Belono <https://github.com/belono>`_.
 
-Many thanks to [Cuducos](https://github.com/cuducos) for Python tools and clarification on some doubts.
+Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts.
 
 This is my very first Python script ever, so PRs are appreciated.
