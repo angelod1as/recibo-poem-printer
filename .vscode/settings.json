@@ -1,4 +1,12 @@
 {
-  "python.pythonPath": "/bin/python3",
-  "restructuredtext.confPath": ""
+  "python.pythonPath": "/home/angelo/.cache/pypoetry/virtualenvs/poem_printer-kys33jlj-py3.8/bin/python",
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.analysis.extraPaths": [
+    "src"
+  ]
 }

@@ -15,19 +15,19 @@ Proof of concept
 Custom text
 -----------
 
-1. The program should read from a ``.txt`` file
+1. [DONE] The program should read from a ``.txt`` file
 
-2. The program should format the result from ``read`` accordingly.
+2. [DONE] The program should format the result from ``read`` accordingly.
 
-3. The printer should print succesfully the generated string by the program.
+3. [DONE] The printer should print succesfully the generated string by the program.
 
 More folders, more texts
 ------------------------
 
-1. The program should read from two folders: ``short-stories`` and ``poems``
-2. The program should format each file accordingly.
-3. The printer should print a random text from a single folder after a command.
-4. The printer should print a random text from a single folder after a key press.
+1. [DONE] The program should read from two folders: ``short-stories`` and ``poems``
+2. [DONE] The program should format each file accordingly.
+3. [DONE] The printer should print a random text from a single folder after a command.
+4. [DONE] The printer should print a random text from a single folder after a key press.
 
 Images
 ------
