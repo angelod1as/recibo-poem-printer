@@ -5,6 +5,10 @@ PoemPrinter
 
 Print from ``.txt`` files into a ``POS-5890C`` Thermal Printer.
 
+.. image:: https://i.imgur.com/17bwnwP.png
+  :width: 400
+  :alt: Picture of POS-5890C thermal printer with printed poem
+
 The software development has the following roadmap:
 
 Proof of concept
