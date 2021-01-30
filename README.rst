@@ -42,3 +42,11 @@ Hardware
 
 At this moment, the software is at it's 95% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
 
+Thanks
+------
+
+This thing only works because of the amazing help from [Belono](https://github.com/belono).
+
+Many thanks to [Cuducos](https://github.com/cuducos) for Python tools and clarification on some doubts.
+
+This is my very first Python script ever, so PRs are appreciated.
