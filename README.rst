@@ -36,15 +36,17 @@ More folders, more texts
 Images
 ------
 
-1. The program should read a ``bitmap`` image.
-2. The program should format the image accordingly (Maybe here I'll simplify the process by creating mandatory image pre-formatting rules)
-3. The program should print the image after a command or key press (as it should be already implemented as seen above)
-4. The program should read, format and print a random image from the ``images`` folder succesfully
+1. [DONE] The program should read a ``bitmap`` image.
+2. [DONE] The program should format the image accordingly (Maybe here I'll simplify the process by creating mandatory image pre-formatting rules)
+3. [DONE] The program should print the image after a command or key press (as it should be already implemented as seen above)
+4. [DONE] The program should read, format and print a random image from the ``images`` folder succesfully
 
 Hardware
 --------
 
 At this moment, the software is at it's 80% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
+
+I'm thinking Raspberry Pi. I have *never* even seen one of those in my life. This will be a nice journey.
 
 Thanks
 ------
