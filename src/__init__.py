@@ -5,9 +5,9 @@ from get_file_group import get_file_group
 
 from get_keypress import get_keypress
 from get_path import get_path
+from print_text import print_text
 
 __version__ = "0.1.0"
-
 
 print("Starting script")
 print("\n")
@@ -23,14 +23,17 @@ key = ""
 
 def print_now(choice):
     file_path = get_path(choice)
-    file_group = get_file_group(file_path)
-    if len(file_group) != 0:
-        selected_text = random.choice(file_group)
-        text_path = pathlib.Path.cwd().joinpath(file_path, selected_text)
-        content = get_content(text_path)
-        print(content)
+    if choice != "comics":
+        file_group = get_file_group(file_path)
+        if len(file_group) != 0:
+            selected_text = random.choice(file_group)
+            text_path = pathlib.Path.cwd().joinpath(file_path, selected_text)
+            content = get_content(text_path)
+            print_text(content)
+        else:
+            print("Pasta vazia")
     else:
-        print("Pasta vazia")
+        print("comics")
 
 
 while key not in ["'q'", "'\\x1b'"]:

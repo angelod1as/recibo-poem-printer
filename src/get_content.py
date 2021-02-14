@@ -1,4 +1,3 @@
-from printer import print_string
 from textwrap import fill
 
 characterLimit = 32  # characters per line
