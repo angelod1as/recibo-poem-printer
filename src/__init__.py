@@ -14,7 +14,7 @@ def getPath(location):
 
 poems = str(getPath("poems"))
 short_stories = str(getPath("short-stories"))
-images = str(getPath("images"))
+images = str(getPath("comics"))
 
 
 print("Starting script")
@@ -22,6 +22,7 @@ print("\n")
 print("> Press:")
 print("> P for POEM")
 print("> S for SHORT STORY")
+print("> C for COMICS")
 print("> Q or ESC quits the program")
 
 
@@ -31,9 +32,12 @@ key = ""
 while key not in ["'q'", "'\\x1b'"]:
     key = get_keypress()
     if key == "'p'":
-        filepath = read_file(getPath("poems"))
+        filepath = read_file(poems)
         print_file(filepath)
 
     elif key == "'s'":
-        filepath = read_file(getPath("short-stories"))
+        filepath = read_file(short_stories)
         print_file(filepath)
+
+    elif key == "'c'":
+        filepath = read_file(images)

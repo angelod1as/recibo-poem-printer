@@ -13,6 +13,11 @@ def read_file(chosen):
     for file in filter(findTexts, dirList):
         filtered.append(file)
 
-    randomFile = random.choice(filtered)
-    filepath = pathlib.Path.cwd().joinpath(chosen, randomFile)
-    return filepath
+    if len(filtered) != 0:
+        randomFile = random.choice(filtered)
+        filepath = pathlib.Path.cwd().joinpath(chosen, randomFile)
+        print(filepath)
+        return filepath
+    else:
+        print("Pasta vazia")
+        return False
