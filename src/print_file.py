@@ -14,7 +14,10 @@ def print_file(filepath):
     def wrapText(string):
         return fill(string, characterLimit)
 
-    mappedList = [*map(wrapText, paragraphList)]
+    mappedList = []
+    for text in map(wrapText, paragraphList):
+        mappedList.append(text)
+
     result = "\n".join(mappedList)
 
     print(result)

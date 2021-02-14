@@ -7,7 +7,7 @@ p.charcode("CP860")
 
 
 def print_string(string):
-    p.text("\n")
-    p.text(string)
-    # p.text("\n\n\n\n\n\n\n")
-    p.cut()
+    print(string)
+    # p.text("\n")
+    # p.text(string)
+    # p.cut()
