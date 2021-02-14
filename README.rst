@@ -8,6 +8,16 @@ Print from ``.txt`` files into a ``POS-5890C`` Thermal Printer.
 .. image:: https://i.imgur.com/17bwnwP.png
   :width: 400
   :alt: Picture of POS-5890C thermal printer with printed poem
+  
+Before anything
+---------------
+
+This is my very first python script. This project is open-source and built for free, but I'd love to be referenced if you fork it/use it anywhere else.
+
+I'd love to see my work being used in other places.
+
+Roadmap
+=======
 
 The software development has the following roadmap:
 
@@ -42,17 +52,17 @@ Images
 4. [DONE] The program should read, format and print a random image from the ``images`` folder succesfully
 
 Hardware
---------
+========
 
 At this moment, the software is at it's 80% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
 
 I'm thinking Raspberry Pi. I have *never* even seen one of those in my life. This will be a nice journey.
 
 Thanks
-------
+======
 
 This thing only works because of the amazing help from `Belono <https://github.com/belono>`_.
 
 Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts.
 
-This is my very first Python script ever, so PRs are appreciated.
+PRs are encouraged and appreciated.
