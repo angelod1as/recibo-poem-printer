@@ -25,7 +25,7 @@ def printer_print(content, type):
         p.text(content)
     if type == "image":
         for image in content:
-            p.image(image)
+            p.image(image, fragment_height=500)
     p.text(spacing)
     p.text(footer)
     p.cut()

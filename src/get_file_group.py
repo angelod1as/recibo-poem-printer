@@ -20,7 +20,6 @@ def get_file_group(chosen, choice):
     dir_list = os.listdir(selected_image_path)
     image_group = []
     for image in dir_list:
-        print(image)
         if image.endswith(".jpg"):
             image_path = str(
                 pathlib.Path.cwd().joinpath(
