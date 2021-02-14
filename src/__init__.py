@@ -1,11 +1,10 @@
 import pathlib
 import random
-from get_content import get_content
+from get_text_content import get_text_content
 from get_file_group import get_file_group
 
 from get_keypress import get_keypress
-from get_path import get_path
-from print_text import print_text
+from printer_print import printer_print
 
 __version__ = "0.1.0"
 
@@ -22,18 +21,20 @@ key = ""
 
 
 def print_now(choice):
-    file_path = get_path(choice)
-    if choice != "comics":
-        file_group = get_file_group(file_path)
+    file_path = str(pathlib.Path.cwd().joinpath("src", "files", choice))
+    if choice == "comics":
+        file_group = get_file_group(file_path, choice)
+        printer_print(file_group, "image")
+    else:
+        file_group = get_file_group(file_path, choice)
         if len(file_group) != 0:
-            selected_text = random.choice(file_group)
-            text_path = pathlib.Path.cwd().joinpath(file_path, selected_text)
-            content = get_content(text_path)
-            print_text(content)
+            selected_file = random.choice(file_group)
+            selected_path = str(pathlib.Path.cwd().joinpath(file_path, selected_file))
+            if selected_file.endswith(".txt"):
+                content = get_text_content(selected_path)
+                printer_print(content, "text")
         else:
             print("Pasta vazia")
-    else:
-        print("comics")
 
 
 while key not in ["'q'", "'\\x1b'"]:

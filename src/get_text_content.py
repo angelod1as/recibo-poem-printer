@@ -5,7 +5,7 @@ characterLimit = 32  # characters per line
 # "./src/files/test.txt"
 
 
-def get_content(filepath):
+def get_text_content(filepath):
     file = open(filepath)
     content = file.read()
     paragraphList = content.split("\n")
