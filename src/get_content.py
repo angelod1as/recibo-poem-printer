@@ -6,7 +6,7 @@ characterLimit = 32  # characters per line
 # "./src/files/test.txt"
 
 
-def print_file(filepath):
+def get_content(filepath):
     file = open(filepath)
     content = file.read()
     paragraphList = content.split("\n")
@@ -20,5 +20,4 @@ def print_file(filepath):
 
     result = "\n".join(mappedList)
 
-    print(result)
-    print_string(result)
+    return result

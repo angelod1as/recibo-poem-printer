@@ -1,20 +1,12 @@
 import pathlib
-from print_file import print_file
-from read_file import read_file
+import random
+from get_content import get_content
+from get_file_group import get_file_group
 
 from get_keypress import get_keypress
+from get_path import get_path
 
 __version__ = "0.1.0"
-
-
-def getPath(location):
-    thisPath = pathlib.Path.cwd().joinpath("src", "files", location)
-    return thisPath.absolute()
-
-
-poems = str(getPath("poems"))
-short_stories = str(getPath("short-stories"))
-images = str(getPath("comics"))
 
 
 print("Starting script")
@@ -29,15 +21,25 @@ print("> Q or ESC quits the program")
 key = ""
 
 
+def print_now(choice):
+    file_path = get_path(choice)
+    file_group = get_file_group(file_path)
+    if len(file_group) != 0:
+        selected_text = random.choice(file_group)
+        text_path = pathlib.Path.cwd().joinpath(file_path, selected_text)
+        content = get_content(text_path)
+        print(content)
+    else:
+        print("Pasta vazia")
+
+
 while key not in ["'q'", "'\\x1b'"]:
     key = get_keypress()
     if key == "'p'":
-        filepath = read_file(poems)
-        print_file(filepath)
+        print_now("poems")
 
     elif key == "'s'":
-        filepath = read_file(short_stories)
-        print_file(filepath)
+        print_now("short-stories")
 
     elif key == "'c'":
-        filepath = read_file(images)
+        print_now("comics")
