@@ -44,7 +44,7 @@ Images
 Hardware
 --------
 
-At this moment, the software is at it's 95% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
+At this moment, the software is at it's 80% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
 
 Thanks
 ------
