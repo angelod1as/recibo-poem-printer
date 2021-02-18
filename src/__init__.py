@@ -31,7 +31,7 @@ def print_now(choice):
             selected_file = random.choice(file_group)
             selected_path = str(pathlib.Path.cwd().joinpath(file_path, selected_file))
             if selected_file.endswith(".txt"):
-                content = get_text_content(selected_path)
+                content = get_text_content(selected_path, type=choice)
                 printer_print(content, "text")
         else:
             print("Pasta vazia")
