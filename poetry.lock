@@ -306,6 +306,25 @@ python-versions = "*"
 images = ["pillow"]
 
 [[package]]
+name = "python-escpos"
+version = "2.2.0"
+description = "Python library to manipulate ESC/POS Printers"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+appdirs = "*"
+argcomplete = "*"
+argparse = "*"
+Pillow = ">=2.0"
+pyserial = "*"
+pyusb = ">=1.0.0"
+pyyaml = "*"
+qrcode = ">=4.0"
+six = "*"
+
+[[package]]
 name = "pyusb"
 version = "1.1.1"
 description = "Python USB access module"
@@ -398,7 +417,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "3b63e5f6250b2628e9b913d32bfbc31126391ee053f1d22afa268f2054131de3"
+content-hash = "8d740bad9ae64e45e4477884000ee8f2eef6285ec5040fabe5978c02369b9819"
 
 [metadata.files]
 appdirs = [
@@ -565,6 +584,10 @@ pytest = [
 python-barcode = [
     {file = "python-barcode-0.13.1.tar.gz", hash = "sha256:fafba4aa24e9d969777be521c294ff18f6c2b36ad63b5fc2f2108d972e23b252"},
     {file = "python_barcode-0.13.1-py3-none-any.whl", hash = "sha256:daa32fb999a843812fbb1c75ff909638811af7c465f0a991e9e41d26d2a44a24"},
+]
+python-escpos = [
+    {file = "python-escpos-2.2.0.tar.gz", hash = "sha256:ce6196675b7a9846a67bae7776977697f503dae81030f1c530c1f4ff7f529837"},
+    {file = "python_escpos-2.2.0-py2.py3-none-any.whl", hash = "sha256:c28a4ebe64fe5b28abe19285c5097628ab272e32bab378be17c20e4a86b5fba2"},
 ]
 pyusb = [
     {file = "pyusb-1.1.1-py3-none-any.whl", hash = "sha256:f18eb813d3a1439918071234589162c2f209a19adbeffeb1377ce078a4aebc70"},

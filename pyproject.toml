@@ -9,8 +9,8 @@ readme = "README.rst"
 [tool.poetry.dependencies]
 python = "^3.8"
 escpos = "^1.8"
-curtsies = "^0.3.5"
 pathlib = "^1.0.1"
+python-escpos = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
