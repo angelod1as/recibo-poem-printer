@@ -61,7 +61,7 @@ I'm thinking Raspberry Pi. I have *never* even seen one of those in my life. Thi
 Thanks
 ======
 
-This thing only works because of the amazing help from `Belono <https://github.com/belono>`_.
+This thing only works because of the amazing help from `Belono <https://github.com/belono>`_ and the `Python ESC/POS <https://github.com/python-escpos/python-escpos/>`_ contributors.
 
 Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts.
 
