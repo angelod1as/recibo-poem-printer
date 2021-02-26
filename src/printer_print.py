@@ -5,7 +5,7 @@ from get_text_content import get_text_content
 
 # 32 characters per line
 p = Usb(0x0416, 0x5011, in_ep=0x81, out_ep=0x03)
-p.charcode("cp850")
+p.charcode('PORTUGUESE')
 
 informationPath = str(pathlib.Path.cwd().joinpath("files", "information"))
 

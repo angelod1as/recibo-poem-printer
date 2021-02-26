@@ -5,9 +5,8 @@ import random
 from get_text_content import get_text_content
 from get_file_group import get_file_group
 
-# from get_keypress import get_keypress
 from printer_print import printer_print
-import keyboard
+import readchar
 
 __version__ = "0.1.0"
 
@@ -39,11 +38,9 @@ def print_now(choice):
         else:
             print("Pasta vazia")
 
-
 while key not in ["q"]:
-    key = "" 
-    pressedKey = keyboard.read_key(suppress=True)
-    key = pressedKey
+    key = ""
+    key = readchar.readkey()
     if key == "p":
         print_now("poems")
 
@@ -52,3 +49,6 @@ while key not in ["q"]:
 
     elif key == "c":
         print_now("comics")
+    
+    elif key == "q":
+        exit()
