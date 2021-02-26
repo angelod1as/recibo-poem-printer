@@ -5,9 +5,9 @@ from get_text_content import get_text_content
 
 # 32 characters per line
 p = Usb(0x0416, 0x5011, in_ep=0x81, out_ep=0x03)
-p.charcode("CP860")
+p.charcode("ISO_8859-15")
 
-informationPath = str(pathlib.Path.cwd().joinpath("src", "files", "information"))
+informationPath = str(pathlib.Path.cwd().joinpath("files", "information"))
 
 headerPath = str(pathlib.Path.cwd().joinpath(informationPath, "header.txt"))
 header = get_text_content(headerPath)

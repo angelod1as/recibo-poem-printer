@@ -1,10 +1,13 @@
+#!/usr/bin/env python3
+
 import pathlib
 import random
 from get_text_content import get_text_content
 from get_file_group import get_file_group
 
-from get_keypress import get_keypress
+# from get_keypress import get_keypress
 from printer_print import printer_print
+import keyboard
 
 __version__ = "0.1.0"
 
@@ -21,7 +24,7 @@ key = ""
 
 
 def print_now(choice):
-    file_path = str(pathlib.Path.cwd().joinpath("src", "files", choice))
+    file_path = str(pathlib.Path.cwd().joinpath( "files", choice))
     if choice == "comics":
         file_group = get_file_group(file_path, choice)
         printer_print(file_group, "image")
@@ -37,13 +40,15 @@ def print_now(choice):
             print("Pasta vazia")
 
 
-while key not in ["'q'", "'\\x1b'"]:
-    key = get_keypress()
-    if key == "'p'":
+while key not in ["q"]:
+    key = "" 
+    pressedKey = keyboard.read_key(suppress=True)
+    key = pressedKey
+    if key == "p":
         print_now("poems")
 
-    elif key == "'s'":
+    elif key == "s":
         print_now("short-stories")
 
-    elif key == "'c'":
+    elif key == "c":
         print_now("comics")
