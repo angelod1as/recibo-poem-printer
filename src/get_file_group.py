@@ -1,6 +1,6 @@
 import os
-import pathlib
 import random
+from flash_path import flash_path
 
 
 def find_texts(string):
@@ -15,15 +15,14 @@ def get_file_group(chosen, choice):
 
     selected_image_folder = random.choice(dir_list)
     selected_image_path = str(
-        pathlib.Path.cwd().joinpath("src", "files", "comics", selected_image_folder)
+        os.path.join(flash_path, "comics", selected_image_folder)
     )
     dir_list = os.listdir(selected_image_path)
     image_group = []
     for image in dir_list:
         if image.endswith(".jpg"):
             image_path = str(
-                pathlib.Path.cwd().joinpath(
-                    "src", "files", "comics", selected_image_folder, image
+                os.path.join(flash_path, "comics", selected_image_folder, image
                 )
             )
             image_group.append(image_path)
