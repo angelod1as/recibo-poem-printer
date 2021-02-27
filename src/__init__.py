@@ -6,7 +6,8 @@ from get_text_content import get_text_content
 from get_file_group import get_file_group
 
 from printer_print import printer_print
-import readchar
+
+import pygame
 
 __version__ = "0.1.0"
 
@@ -19,7 +20,8 @@ print("> C for COMICS")
 print("> Q or ESC quits the program")
 
 
-key = ""
+pygame.init()
+joysticks = []
 
 
 def print_now(choice):
@@ -37,18 +39,31 @@ def print_now(choice):
                 printer_print(content, "text")
         else:
             print("Pasta vazia")
+            
 
-while key not in ["q"]:
-    key = ""
-    key = readchar.readkey()
-    if key == "p":
-        print_now("poems")
+# for al the connected joysticks
+for i in range(0, pygame.joystick.get_count()):
+    # create an Joystick object in our list
+    joysticks.append(pygame.joystick.Joystick(i))
+    # initialize them all (-1 means loop forever)
+    joysticks[-1].init()
+    # print a statement telling what the name of the controller is
+    print ("Detected joystick "),joysticks[-1].get_name(),"'"
 
-    elif key == "s":
-        print_now("short-stories")
+keepPlaying = True
 
-    elif key == "c":
-        print_now("comics")
-    
-    elif key == "q":
-        exit()
+while keepPlaying:
+    for event in pygame.event.get():
+        try:
+            # the 11 event is keyup
+            key_up = event.type == 11
+            if key_up:
+                key_pressed = event.button
+                if key_pressed == 0:
+                    print_now("poems")
+                elif key_pressed == 1:
+                    print_now("short-stories")
+                elif key_pressed == 2:
+                    print_now("comics")
+        except:
+            print('An exception ocurred')
