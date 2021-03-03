@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# to watch rc.local
+# grep rc.local /var/log/syslog 
+
+__version__ = "0.1.0"
+
 import os
 import random
 from flash_path import flash_path
@@ -9,8 +14,6 @@ from get_file_group import get_file_group
 from printer_print import printer_print
 
 import pygame
-
-__version__ = "0.1.0"
 
 print("Starting script")
 print("\n")
@@ -28,7 +31,7 @@ joysticks = []
 def print_now(choice):
     flash = flash_path()
     if flash:
-        file_path = str(os.path.join(flash_path, choice))
+        file_path = str(os.path.join(flash, choice))
         if choice == "comics":
             file_group = get_file_group(file_path, choice)
             printer_print(file_group, "image")
@@ -59,8 +62,6 @@ keepPlaying = True
 
 while keepPlaying:
     for event in pygame.event.get():
-        #         try:
-        # the 11 event is keyup
         key_up = event.type == 11
         if key_up:
             key_pressed = event.button
@@ -71,5 +72,4 @@ while keepPlaying:
                 print_now("short-stories")
             elif key_pressed == 2:
                 print_now("comics")
-#         except:
-#             print('An exception ocurred')
+
