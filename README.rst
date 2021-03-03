@@ -30,9 +30,7 @@ Custom text
 -----------
 
 1. [DONE] The program should read from a ``.txt`` file
-
 2. [DONE] The program should format the result from ``read`` accordingly.
-
 3. [DONE] The printer should print succesfully the generated string by the program.
 
 More folders, more texts
@@ -54,25 +52,47 @@ Images
 Hardware
 ========
 
-**UPDATE:**
+- Raspberry Pi 3 Model B + 16gb card
+- POS-5890C printer
+- Sandisk 16gb flash drive
+- Zero Delay card + nylon arcade buttons
 
-I'm using a Raspberry Pi 3 model B. Connected via USB is a Zero Delay board with three buttons.
+The Zero Delay card, connected to the buttons, feeds controller information through USB to the Raspberry Pi. It, running my program, reads the according file and sends its content to the printer.
 
-`I'm having a REAL rough time making it run on startup, though <https://stackoverflow.com/questions/66450242/make-python-script-run-on-startup-on-raspberry-pi>`_. 
+**Important**: In order to make the files easily updateable, I did a somewhat hack:
 
-**LAST VERSION:**
+- I have a flash drive connected with a set folder structure
+- I edited ``/etc/rc.local`` file at Raspbian like this:
 
-At this moment, the software is at it's 80% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
+::
 
-I'm thinking Raspberry Pi. I have *never* even seen one of those in my life. This will be a nice journey.
+    sudo mount /dev/sda1 /mnt
+    sudo cp -r /mnt/ /home/pi/poem-printer/files/
+    sudo python3 /home/pi/poem-printer/src/__init__.py &
+
+    exit 0
+
+The first line mounts the flash drive, the second copies the files to the local drive and the third starts the script.
+
+The only downside is that it takes a few seconds to boot completely.
+
+(If you know a way to run the script ONLY after the USB drives were mounted succesfully, please let me know. All my attempts failed)
+
+to watch rc.local after boot: ``grep rc.local /var/log/syslog``  
 
 Thanks
 ======
 
+**First:**
+
+Thanks to `Casa 1 <https://www.casaum.org/>`_. They financed this project through buying the necessary hardware.
+
+If you have money to spare, consider donating to them. They are a home for LGBTQ+ people that were denied housing and rights.
+
+**Second:**
+
 This thing only works because of the amazing help from `Belono <https://github.com/belono>`_ and the `Python ESC/POS <https://github.com/python-escpos/python-escpos/>`_ contributors.
 
-Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts.
-
-Many thanks to `Jonas Marques <https://twitter.com/jonassmarques>`_ for his tips and always-ready answers to my many questions.
+Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts. Thanks to `Jonas Marques <https://twitter.com/jonassmarques>`_ for his tips and answers to my many (many!) questions.
 
 PRs are encouraged and appreciated.

@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# to watch rc.local
-# grep rc.local /var/log/syslog 
-
 __version__ = "0.1.0"
 
 import os
@@ -15,14 +12,7 @@ from printer_print import printer_print
 
 import pygame
 
-print("Starting script")
-print("\n")
-print("> Press:")
-print("> P for POEM")
-print("> S for SHORT STORY")
-print("> C for COMICS")
-print("> Q or ESC quits the program")
-
+print("Printer program started")
 
 pygame.init()
 joysticks = []
@@ -50,7 +40,7 @@ def print_now(choice):
 
 
 # for al the connected joysticks
-for i in range(0, pygame.joystick.get_count()):
+for i in range(pygame.joystick.get_count()):
     # create an Joystick object in our list
     joysticks.append(pygame.joystick.Joystick(i))
     # initialize them all (-1 means loop forever)
@@ -72,4 +62,3 @@ while keepPlaying:
                 print_now("short-stories")
             elif key_pressed == 2:
                 print_now("comics")
-
