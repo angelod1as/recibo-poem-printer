@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 import os
 import random
@@ -62,3 +62,5 @@ while keepPlaying:
                 print_now("short-stories")
             elif key_pressed == 2:
                 print_now("comics")
+            elif key_pressed == 3:
+                print_now("kids")
