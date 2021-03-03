@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# to watch rc.local
-# grep rc.local /var/log/syslog 
-
 __version__ = "0.1.0"
 
 import os
@@ -72,4 +69,3 @@ while keepPlaying:
                 print_now("short-stories")
             elif key_pressed == 2:
                 print_now("comics")
-
