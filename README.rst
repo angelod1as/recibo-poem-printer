@@ -54,6 +54,14 @@ Images
 Hardware
 ========
 
+**UPDATE:**
+
+I'm using a Raspberry Pi 3 model B. Connected via USB is a Zero Delay board with three buttons.
+
+`I'm having a REAL rough time making it run on startup, though <https://stackoverflow.com/questions/66450242/make-python-script-run-on-startup-on-raspberry-pi>`_. 
+
+**LAST VERSION:**
+
 At this moment, the software is at it's 80% mark. I need to find out how to make a custom hardware to send commands to it and understand how to run this without hitches and errors.
 
 I'm thinking Raspberry Pi. I have *never* even seen one of those in my life. This will be a nice journey.
@@ -64,5 +72,7 @@ Thanks
 This thing only works because of the amazing help from `Belono <https://github.com/belono>`_ and the `Python ESC/POS <https://github.com/python-escpos/python-escpos/>`_ contributors.
 
 Many thanks to `Cuducos <https://github.com/cuducos>`_ for Python tools and clarification on some doubts.
+
+Many thanks to `Jonas Marques <https://twitter.com/jonassmarques>`_ for his tips and always-ready answers to my many questions.
 
 PRs are encouraged and appreciated.
