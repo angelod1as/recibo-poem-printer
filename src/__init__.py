@@ -22,7 +22,7 @@ def print_now(choice):
     flash = flash_path()
     if flash:
         file_path = str(os.path.join(flash, choice))
-        if choice == "comics":
+        if choice in ["comics", "kids"]:
             file_group = get_file_group(file_path, choice)
             printer_print(file_group, "image")
         else:
