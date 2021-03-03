@@ -24,22 +24,27 @@ print("> Q or ESC quits the program")
 pygame.init()
 joysticks = []
 
+
 def print_now(choice):
-    file_path = str(os.path.join(flash_path, choice))
-    if choice == "comics":
-        file_group = get_file_group(file_path, choice)
-        printer_print(file_group, "image")
-    else:
-        file_group = get_file_group(file_path, choice)
-        if len(file_group) != 0:
-            selected_file = random.choice(file_group)
-            selected_path = str(os.path.join(file_path, selected_file))
-            if selected_file.endswith(".txt"):
-                content = get_text_content(selected_path, type=choice)
-                printer_print(content, "text")
+    flash = flash_path()
+    if flash:
+        file_path = str(os.path.join(flash_path, choice))
+        if choice == "comics":
+            file_group = get_file_group(file_path, choice)
+            printer_print(file_group, "image")
         else:
-            print("Pasta vazia")
-            
+            file_group = get_file_group(file_path, choice)
+            if len(file_group) != 0:
+                selected_file = random.choice(file_group)
+                selected_path = str(os.path.join(file_path, selected_file))
+                if selected_file.endswith(".txt"):
+                    content = get_text_content(selected_path, type=choice)
+                    printer_print(content, "text")
+            else:
+                print("Pasta vazia")
+    else:
+        print("MEDIA NOT FOUND")
+
 
 # for al the connected joysticks
 for i in range(0, pygame.joystick.get_count()):
@@ -48,23 +53,23 @@ for i in range(0, pygame.joystick.get_count()):
     # initialize them all (-1 means loop forever)
     joysticks[-1].init()
     # print a statement telling what the name of the controller is
-    print ("Detected joystick "),joysticks[-1].get_name(),"'"
+    print("Detected joystick "), joysticks[-1].get_name(), "'"
 
 keepPlaying = True
 
 while keepPlaying:
     for event in pygame.event.get():
-#         try:
-            # the 11 event is keyup
-            key_up = event.type == 11
-            if key_up:
-                key_pressed = event.button
-                print('key', key_pressed)
-                if key_pressed == 0:
-                    print_now("poems")
-                elif key_pressed == 1:
-                    print_now("short-stories")
-                elif key_pressed == 2:
-                    print_now("comics")
+        #         try:
+        # the 11 event is keyup
+        key_up = event.type == 11
+        if key_up:
+            key_pressed = event.button
+            print("key", key_pressed)
+            if key_pressed == 0:
+                print_now("poems")
+            elif key_pressed == 1:
+                print_now("short-stories")
+            elif key_pressed == 2:
+                print_now("comics")
 #         except:
 #             print('An exception ocurred')

@@ -1,2 +1,8 @@
 import os
-flash_path = os.path.join('/', 'media', 'pi', 'D765-45BB')
+
+
+def flash_path():
+    try:
+        return os.path.join("/", "media", "pi", "D765-45BB")
+    except Exception:
+        return False
