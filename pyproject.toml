@@ -11,6 +11,7 @@ python = "^3.8"
 escpos = "^1.8"
 pathlib = "^1.0.1"
 python-escpos = "^2.2.0"
+pygame = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
