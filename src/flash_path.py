@@ -1,2 +1,2 @@
 import os
-flash_path = os.path.join('/', 'media', 'pi', 'A26C-FA07')
+flash_path = os.path.join('/', 'media', 'pi', 'D765-45BB')
