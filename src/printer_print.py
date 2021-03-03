@@ -1,21 +1,26 @@
 # printer.py
 import os
-import pathlib
+from escpos.exceptions import USBNotFoundError
 from escpos.printer import Usb
 from get_text_content import get_text_content
 from flash_path import flash_path
 
 # 32 characters per line
-p = Usb(0x0416, 0x5011, in_ep=0x81, out_ep=0x03)
-p.charcode('PORTUGUESE')
+try:
+    p = Usb(0x0416, 0x5011, in_ep=0x81, out_ep=0x03)
+    p.charcode("PORTUGUESE")
 
-headerPath = str(os.path.join(flash_path, "information", "header.txt"))
-header = get_text_content(headerPath)
+    headerPath = str(os.path.join(flash_path, "information", "header.txt"))
+    header = get_text_content(headerPath)
 
-footerPath = str(os.path.join(flash_path, "information", "footer.txt"))
-footer = get_text_content(footerPath)
+    footerPath = str(os.path.join(flash_path, "information", "footer.txt"))
+    footer = get_text_content(footerPath)
 
-spacing = "\n\n"
+    spacing = "\n\n"
+except USBNotFoundError:
+    print("Printer not found")
+except Exception:
+    print("Something went wrong on printer")
 
 
 def printer_print(content, type):
