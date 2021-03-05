@@ -23,7 +23,11 @@ if flash:
         p.text(header)
         p.text(spacing)
         if type == "text":
-            p.text(content)
+            try:
+                p.text(content)
+            except UnicodeEncodeError as e:
+                print(e)
+                p.text("Há algum caracter estranho no arquivo")
         if type == "image":
             for image in content:         
                 p.image(image, fragment_height=300)

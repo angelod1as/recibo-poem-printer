@@ -41,6 +41,8 @@ def print_now(choice):
         print("MEDIA NOT FOUND")
 
 
+print_now("short-stories")
+
 # for al the connected joysticks
 for i in range(pygame.joystick.get_count()):
     # create an Joystick object in our list
