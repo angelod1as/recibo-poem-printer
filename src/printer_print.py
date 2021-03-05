@@ -26,10 +26,10 @@ if flash:
                 p.text(content)
             except UnicodeEncodeError as e:
                 print(file_path)
-                print(e)
+                print(str(e))
                 p.text("O arquivo deu erro. Abaixo, informações")
                 p.text(file_path)
-                p.text(e)
+                p.text(str(e))
         if type == "image":
             for image in content:
                 p.image(image, fragment_height=300)
