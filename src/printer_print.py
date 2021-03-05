@@ -18,21 +18,25 @@ if flash:
 
     spacing = "\n\n"
 
-
-    def printer_print(content, type):
+    def printer_print(content, type, file_path):
         p.text(header)
         p.text(spacing)
         if type == "text":
             try:
                 p.text(content)
             except UnicodeEncodeError as e:
+                print(file_path)
                 print(e)
-                p.text("Há algum caracter estranho no arquivo")
+                p.text("O arquivo deu erro. Abaixo, informações")
+                p.text(file_path)
+                p.text(e)
         if type == "image":
-            for image in content:         
+            for image in content:
                 p.image(image, fragment_height=300)
         p.text(spacing)
         p.text(footer)
         p.cut()
+
+
 else:
     print("USB Flash Drive not found")

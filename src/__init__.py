@@ -24,17 +24,15 @@ def print_now(choice):
         file_path = str(os.path.join(flash, choice))
         if choice in ["comics", "kids"]:
             file_group = get_file_group(file_path, choice)
-            print(file_group)
-            printer_print(file_group, "image")
+            printer_print(file_group, "image", file_group)
         else:
             file_group = get_file_group(file_path, choice)
             if len(file_group) != 0:
                 selected_file = random.choice(file_group)
                 selected_path = str(os.path.join(file_path, selected_file))
                 if selected_file.endswith(".txt"):
-                    print(selected_path)
                     content = get_text_content(selected_path, type=choice)
-                    printer_print(content, "text")
+                    printer_print(content, "text", selected_path)
             else:
                 print("Pasta vazia")
     else:
