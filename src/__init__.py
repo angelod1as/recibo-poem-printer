@@ -24,6 +24,7 @@ def print_now(choice):
         file_path = str(os.path.join(flash, choice))
         if choice in ["comics", "kids"]:
             file_group = get_file_group(file_path, choice)
+            print(file_group)
             printer_print(file_group, "image")
         else:
             file_group = get_file_group(file_path, choice)
@@ -31,6 +32,7 @@ def print_now(choice):
                 selected_file = random.choice(file_group)
                 selected_path = str(os.path.join(file_path, selected_file))
                 if selected_file.endswith(".txt"):
+                    print(selected_path)
                     content = get_text_content(selected_path, type=choice)
                     printer_print(content, "text")
             else:

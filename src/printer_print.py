@@ -25,8 +25,8 @@ if flash:
         if type == "text":
             p.text(content)
         if type == "image":
-            for image in content:
-                p.image(image, fragment_height=500)
+            for image in content:         
+                p.image(image, fragment_height=300)
         p.text(spacing)
         p.text(footer)
         p.cut()
