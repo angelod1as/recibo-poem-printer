@@ -1,7 +1,9 @@
-PoemPrinter
+Recibo, the Poem Printer
 ============================================
 
 *This is a program created in collaboration with Casa1, a LGBTQ+ housing program in Brazil.*
+
+`**Read more about the development here** <https://www.angelodias.com.br/projects/recibo>`_
 
 Print from ``.txt`` files into a ``POS-5890C`` Thermal Printer.
 
