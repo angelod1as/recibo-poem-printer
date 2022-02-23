@@ -21,14 +21,27 @@ if flash:
     def printer_print(content, type, file_path):
         p.text(header)
         p.text(spacing)
+        if type == "start":
+            try:
+                print(content)
+                p.text("Iniciando RECIBO\nUm projeto com código de\nAngelo Dias\nwww.angelodias.com.br\n\n")
+
+                if content ==  "null":
+                    p.text("Não estou conectado a internet, não tenho IP")
+                else:
+                    p.text("Meu endereço IP é: ")
+                    p.text(content)
+            except UnicodeEncodeError as e:
+                p.text("Oops, há algo errado com a impressora/usb/computador")                
         if type == "text":
             try:
                 p.text(content)
             except UnicodeEncodeError as e:
                 print(file_path)
                 print(str(e))
-                p.text("O arquivo deu erro. Abaixo, informações")
+                p.text("Tem coisas da gente que não são defeito nem erro: são só jeito da gente ser. (Caio F. Abreu)\n\nDesta vez, o erro foi aqui:\n")
                 p.text(file_path)
+                p.text("\n")
                 p.text(str(e))
         if type == "image":
             for image in content:

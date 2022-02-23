@@ -2,6 +2,7 @@
 
 __version__ = "1.0.0"
 
+import sys
 import os
 import random
 from flash_path import flash_path
@@ -16,7 +17,9 @@ print("Printer program started")
 
 pygame.init()
 joysticks = []
-
+ip = "null"
+if len(sys.argv) > 1:
+    ip = str(sys.argv[1])
 
 def print_now(choice):
     flash = flash_path()
@@ -38,8 +41,7 @@ def print_now(choice):
     else:
         print("MEDIA NOT FOUND")
 
-
-print_now("short-stories")
+printer_print(ip, "start", "")
 
 # for al the connected joysticks
 for i in range(pygame.joystick.get_count()):
@@ -55,9 +57,11 @@ keepPlaying = True
 while keepPlaying:
     for event in pygame.event.get():
         key_up = event.type == 11
+        if event.type == 7:
+            print("Poem Printer script aborted")
+            sys.exit("Poem Printer script aborted")
         if key_up:
             key_pressed = event.button
-            print("key", key_pressed)
             if key_pressed == 0:
                 print_now("poems")
             elif key_pressed == 1:
